@@ -1,0 +1,807 @@
+/*
+
+Tooplate 2131 Wedding Lite
+
+https://www.tooplate.com/view/2131-wedding-lite
+
+*/
+
+/*---------------------------------------
+  CUSTOM PROPERTIES ( VARIABLES )             
+-----------------------------------------*/
+:root {
+  --white-color:                  #ffffff;
+  --primary-color:                #ff5500;
+  --secondary-color:              #f1c522;
+  --section-bg-color:             #f9f9f9;
+  --custom-btn-bg-color:          #cb7575;
+  --dark-color:                   #000000;
+  --p-color:                      #717275;
+  --border-color:                 #e9eaeb;
+  --icon-color:                   #28856b;
+
+  --body-font-family:             "Open Sans", sans-serif;
+  --title-font-family:            "Encode Sans Condensed", sans-serif;
+
+  --h1-font-size:                 72px;
+  --h2-font-size:                 48px;
+  --h3-font-size:                 36px;
+  --h4-font-size:                 32px;
+  --h5-font-size:                 24px;
+  --h6-font-size:                 22px;
+  --p-font-size:                  20px;
+  --menu-font-size:               14px;
+  --copyright-font-size:          16px;
+
+  --border-radius-large:          100px;
+  --border-radius-medium:         20px;
+  --border-radius-small:          10px;
+
+  --font-weight-light:            300;
+  --font-weight-normal:           400;
+  --font-weight-medium:           500;
+  --font-weight-bold:             700;
+}
+
+body {
+    background: var(--white-color);
+    font-family: var(--body-font-family); 
+}
+
+
+/*---------------------------------------
+  TYPOGRAPHY               
+-----------------------------------------*/
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--dark-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--title-font-family);
+  font-weight: var(--font-weight-bold);
+}
+
+h1 {
+  font-size: var(--h1-font-size);
+}
+
+h2 {
+  font-size: var(--h2-font-size);
+  color: var(--secondary-color);
+}
+
+h3 {
+  font-size: var(--h3-font-size);
+}
+
+h4 {
+  font-size: var(--h4-font-size);
+}
+
+h5 {
+  font-size: var(--h5-font-size);
+  line-height: normal;
+}
+
+h6 {
+  font-size: var(--h6-font-size);
+}
+
+p {
+  color: var(--p-color);
+  font-size: var(--p-font-size);
+  font-weight: var(--font-weight-light);
+}
+
+ul li {
+  color: var(--p-color);
+  font-size: var(--p-font-size);
+  font-weight: var(--font-weight-light);
+}
+
+a, 
+button {
+  touch-action: manipulation;
+  transition: all 0.3s;
+}
+
+a {
+  color: var(--p-color);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--secondary-color);
+}
+
+::selection {
+  background: var(--secondary-color);
+  color: var(--white-color);
+}
+
+::-moz-selection {
+  background: var(--secondary-color);
+  color: var(--white-color);
+}
+
+b,
+strong {
+  font-weight: var(--font-weight-bold);
+}
+
+.custom-icon {
+  color: var(--icon-color);
+}
+
+.section-bg {
+  background: var(--section-bg-color);
+}
+
+.section-padding {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.section-block {
+  padding: 20px;
+}
+
+.section-divider {
+  background: var(--border-color);
+  width: 1px;
+  height: 50%;
+  margin: auto;
+}
+
+
+/*---------------------------------------
+  SECTION TITLE               
+-----------------------------------------*/
+.section-title-wrap {
+  display: block;
+  margin: auto;
+  position: relative;
+  text-align: center;
+}
+
+.section-title-line {
+  background: var(--border-color);
+  display: inline-block;
+  vertical-align: middle;
+  width: 30px;
+  height: 2px;
+  margin: 0 auto;
+}
+
+.section-title-icon {
+  color: var(--primary-color);
+  font-size: var(--h5-font-size);
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 10px;
+  margin-left: 10px;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+}
+
+
+/*---------------------------------------
+  PRE LOADER               
+-----------------------------------------*/
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99999;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  background: none repeat scroll 0 0 var(--white-color);
+}
+
+.spinner {
+  animation: pulse 1s infinite ease-in-out alternate;
+}
+
+.spinner svg {
+  fill: var(--primary-color);
+  font-size: var(--h4-font-size);
+}
+
+@keyframes pulse {
+  from { transform: scale(0.8); }
+  to { transform: scale(1.2); }
+}
+
+
+/*---------------------------------------
+  IMAGE HOVER               
+-----------------------------------------*/
+.image-hover-thumb {
+  border-radius: var(--border-radius-medium);
+  position: relative;
+  overflow: hidden;
+  width: 250px;
+  height: 250px;
+}
+
+.image-hover-thumb:hover .img-fluid {
+  transform: scale(1.05);
+}
+
+.image-hover-thumb .img-fluid {
+  border-radius: var(--border-radius-small);
+  display: block;
+  transition: all 0.5s;
+}
+
+
+/*---------------------------------------
+  NAVIGATION              
+-----------------------------------------*/
+.sticky-wrapper {
+  min-height: 98px;
+}
+
+.navbar {
+  position: absolute;
+  z-index: 9;
+  right: 0;
+  left: 0;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.is-sticky .navbar {
+  background: var(--white-color);
+}
+.navbar-brand img{
+  width: 50px;
+	height: 50px;
+}
+
+.navbar-brand {
+  font-family: var(--body-font-family);
+  font-optical-sizing: auto;
+  font-weight: 650;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+  font-size: var(--h6-font-size);
+}
+
+.navbar-brand,
+.navbar-brand:hover {
+  color: var(--primary-color);
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+  padding-right: 0;
+  padding-left: 0;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+.navbar-nav .nav-link {
+  display: inline-block;
+  color: var(--p-color);
+  font-size: var(--menu-font-size);
+  font-weight: var(--font-weight-normal);
+  text-transform: uppercase;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.navbar-nav .nav-link.active, 
+.navbar-nav .nav-link:hover {
+  color: var(--custom-btn-bg-color);
+}
+
+.navbar-toggler {
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  margin: 0;
+  width: 30px;
+  height: 35px;
+  outline: none;
+}
+
+.navbar-toggler:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+  background: transparent;
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:before,
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:after {
+  transition: top 300ms 50ms ease, -webkit-transform 300ms 350ms ease;
+  transition: top 300ms 50ms ease, transform 300ms 350ms ease;
+  transition: top 300ms 50ms ease, transform 300ms 350ms ease, -webkit-transform 300ms 350ms ease;
+  top: 0;
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:before {
+  transform: rotate(45deg);
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:after {
+  transform: rotate(-45deg);
+}
+
+.navbar-toggler .navbar-toggler-icon {
+  background: var(--dark-color);
+  transition: background 10ms 300ms ease;
+  display: block;
+  width: 30px;
+  height: 2px;
+  position: relative;
+}
+
+.navbar-toggler .navbar-toggler-icon:before,
+.navbar-toggler .navbar-toggler-icon:after {
+  transition: top 300ms 350ms ease, -webkit-transform 300ms 50ms ease;
+  transition: top 300ms 350ms ease, transform 300ms 50ms ease;
+  transition: top 300ms 350ms ease, transform 300ms 50ms ease, -webkit-transform 300ms 50ms ease;
+  position: absolute;
+  right: 0;
+  left: 0;
+  background: var(--dark-color);
+  width: 30px;
+  height: 2px;
+  content: '';
+}
+
+.navbar-toggler .navbar-toggler-icon::before {
+  top: -8px;
+}
+
+.navbar-toggler .navbar-toggler-icon::after {
+  top: 8px;
+}
+
+
+/*---------------------------------------
+  Header              
+-----------------------------------------*/
+.header {
+	background-image: url("../images/headerBg.png");
+	background-size: cover;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding-left: 60px;
+	padding-right: 60px;
+	padding-top: 80px;
+  border-radius: var(--border-radius-small);
+  position: relative;
+  overflow: hidden;
+  height: calc(90vh - 250px);
+}
+.logo h3{
+	font-family: "Open Sans", sans-serif;
+	font-optical-sizing: auto;
+  	font-weight: 600;
+  	font-style: normal;
+	text-align: center;
+	font-size: 22px;
+  color: var(--white-color);
+}
+.logo{
+	flex-direction: column;
+	justify-content: center;
+}
+.headerTitle{
+	padding-top: 50px;
+	flex-direction: column;
+	justify-content: center;
+}
+.header img{
+	width: 160px;
+	height: 160px;
+}
+.header h1 {
+	font-family: "Encode Sans Condensed", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+	font-size: 60px;
+	margin: 0;
+}
+.header h2 {
+	font-family: "Encode Sans Condensed", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+	font-size: 40px;
+	margin: 0;
+	color: #ffffff;
+}
+.header h1 {
+	color: #ffffff;
+}
+.yellow {
+	color: #f4dc86;
+}
+
+.header p {
+  font-family: "Open Sans", sans-serif;
+	font-optical-sizing: auto;
+  font-weight: 300;
+	margin: 0;
+	font-size: 22px;
+	color: #ffffff;
+}
+/*---------------------------------------
+  Service              
+-----------------------------------------*/
+.service-section{
+  height: calc(90vh - 500px);
+}
+.buttons {
+	background-color: #ffffff;
+	padding: 30px 10px 10px 10px;
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 50px;
+}
+.serviceButton {
+    background-color: #f0f0f0;
+    border: none;
+	border-radius: 10px;
+    display: inline-block;
+    margin: 20px 20px;
+    cursor: pointer;
+	width: 140px;
+	height: 140px;
+	box-shadow: 5px 5px 10px rgba(118, 118, 118, 0.5);
+}
+.serviceButton img {
+	width: 98%;
+	height: 98%;
+}
+
+
+/*---------------------------------------
+  News            
+-----------------------------------------*/
+.news {
+	display: flex;
+	flex-direction: row;
+	justify-items: space-around;
+	margin: 10px 10px 10px 10px;
+}
+.news-img {
+	margin-left: 10px;
+	margin-right: 10px;
+	width: 500px;
+	
+}
+.the-wedding-section img {
+	box-shadow: 2px 2px 5px rgba(118, 118, 118, 0.5);
+	border-radius: 20px;
+	border: none;
+}
+
+.news p {
+  margin-top: 10px;
+  font: var(--title-font-family);
+  color: var(--dark-color);
+	text-align: center;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 22px;
+  max-width: 330px;
+}
+
+#news1-description, #news2-description, #news3-description {
+  color: var(--dark-color);
+  font: var(--body-font-family);
+  text-align: center;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 18px;
+  margin-top: 10px;
+  max-width: 330px;
+}
+/*---------------------------------------
+  ABOUT              
+-----------------------------------------*/
+.about-info-wrap {
+  height: 100%;
+  padding: 20px;
+}
+
+.about-tag {
+  font-weight: var(--font-weight-light);
+  text-transform: uppercase;
+}
+
+.nav-tabs {
+  border-bottom: 0;
+  margin-top: 20px;
+}
+
+.nav-tabs .nav-link {
+  color: var(--p-color);
+  display: block;
+  text-align: left;
+}
+
+.nav-tabs .nav-link {
+  border-radius: 0;
+  border: 0;
+  border-right: 2px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  width: 100%;
+  margin-bottom: 0;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+}
+
+.nav-tabs .nav-link:last-child {
+  border-bottom: 0;
+}
+
+.nav-tabs .nav-link::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  width: 19px;
+  height: 19px;
+  background: transparent;
+  text-indent: -9999px;
+  border-top: 2px solid transparent;
+  border-left: 2px solid transparent;
+  transition: all 250ms ease-in-out;
+  text-decoration: none;
+  color: transparent;
+  top: 50%;
+  right: -11px;
+  transform: translate(0, -50%) rotate(135deg) ;
+}
+
+.nav-tabs .nav-link.active::after {
+  background: var(--white-color);
+  border-top-color: var(--secondary-color);
+  border-left-color: var(--secondary-color);
+}
+
+.nav-tabs .nav-item.show .nav-link, 
+.nav-tabs .nav-link.active,
+.nav-tabs .nav-link:focus {
+  border-color: var(--border-color);
+  border-right-color: var(--secondary-color);
+}
+
+.nav-tabs .nav-link.active h3,
+.nav-tabs .nav-link:focus h3, 
+.nav-tabs .nav-link:hover h3 {
+  color: var(--primary-color);
+}
+
+/*---------------------------------------
+  SOCIAL ICON               
+-----------------------------------------*/
+.social-icon {
+  margin: 0;
+  padding: 0;
+}
+
+.social-icon-item {
+  list-style: none;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.social-icon-link {
+  background: var(--secondary-color);
+  border-radius: var(--border-radius-large);
+  font-size: var(--menu-font-size);
+  color: var(--dark-color);
+  display: inline-block;
+  vertical-align: top;
+  margin: 4px;
+  width: 30px;
+  line-height: 30px;
+  line-height: 30px;
+  text-align: center;
+}
+
+.social-icon-link:hover {
+  color: var(--white-color);
+}
+
+
+/*---------------------------------------
+  RESPONSIVE STYLES               
+-----------------------------------------*/
+@media screen and (max-width: 1200px) {
+  .hero-container {
+    background-size: contain;
+    background-position: bottom;
+  }
+}
+
+@media only screen and (min-width: 580px) and (max-width: 1170px) {
+  .hero-container {
+    height: inherit;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .the-wedding-section .image-hover-thumb,
+  .the-wedding-section .google-map {
+    height: 55%;
+  }
+
+  .the-wedding-section .section-block {
+    height: 45%;
+  }
+
+  .save-the-date-thumb {
+    text-align: right;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  h1 {
+    font-size: 48px;
+  }
+
+  h2 {
+    font-size: 42px;
+  }
+
+  h3 {
+    font-size: 32px;
+  }
+
+  h4 {
+    font-size: 28px;
+  }
+
+  h5 {
+    font-size: 20px;
+  }
+
+  h6 {
+    font-size: 18px;
+  }
+
+  .section-padding {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  .custom-btn {
+    font-size: 18px;
+    padding: 10px 20px;
+  }
+
+  .navbar {
+    background: var(--white-color);
+  }
+
+  .navbar-expand-lg .navbar-nav .nav-link {
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  .navbar-nav .nav-link {
+    padding-bottom: 0;
+  }
+
+  .hero-container {
+    padding: 40px;
+    min-height: 650px;
+  }
+
+  .about-info-wrap {
+    padding: 10px 20px 40px 20px;
+  }
+
+  .site-footer {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .section-divider {
+    width: 100%;
+    height: 1px;
+  }
+
+  .nav-tabs {
+    margin-top: 0;
+    margin-bottom: 50px;
+  }
+
+  .nav-tabs .nav-link {
+    border-bottom: 2px solid var(--border-color);
+    width: 50%;
+    text-align: center;
+  }
+
+  .nav-tabs .nav-link:last-child {
+    border-bottom: 2px solid var(--border-color);
+  }
+
+  .nav-tabs .nav-link:last-child {
+    border-right: 0;
+  }
+
+  .nav-tabs .nav-link::after {
+    top: inherit;
+    right: 0;
+    left: 50%;
+    transform: translate(-50%, 0) rotate(225deg) ;
+    bottom: -11px;
+  }
+
+  .nav-tabs .nav-item.show .nav-link, 
+  .nav-tabs .nav-link.active,
+  .nav-tabs .nav-link:focus {
+    border-color: var(--border-color);
+    border-right-color: var(--border-color);
+    border-bottom-color: var(--secondary-color);
+  }
+
+  .people-thumb {
+    margin-bottom: 0;
+  }
+
+  .people-section .section-block {
+    padding-top: 10px;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .hero-container {
+    margin-right: 12px;
+    margin-left: 12px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 40px;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+
+  h3 {
+    font-size: 26px;
+  }
+
+  h4 {
+    font-size: 22px;
+  }
+
+  h5 {
+    font-size: 20px;
+  }
+
+  .hero-container {
+    padding: 30px;
+  }
+}
